@@ -6,7 +6,8 @@ const db = mongoose.connect("mongodb://localhost/gameblogapi", {
   useMongoClient: true
 });
 
-const gameBlogRouter = require("./gameBlogRouter");
+const gameBlogRouter = require("./routers/gameBlogRouter");
+const movieBlogRouter = require("./routers/movieBlogRouter");
 const app = express();
 
 const port = process.env.PORT || 8080;
@@ -19,6 +20,7 @@ app.get("/", function(req, res) {
 });
 
 app.use("/api/gameblogs", gameBlogRouter);
+app.use("/api/movieblogs", movieBlogRouter);
 
 app.listen(port, function() {
   console.log("Listening on port " + port);
