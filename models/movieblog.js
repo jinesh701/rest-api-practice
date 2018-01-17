@@ -13,7 +13,7 @@ movieblogSchema.methods.serialize = function() {
     title: this.title,
     content: this.content,
     author: this.author,
-    completed: this.completed
+    watched: this.watched
   };
 };
 
